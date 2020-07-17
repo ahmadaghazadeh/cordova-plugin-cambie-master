@@ -1,0 +1,31 @@
+{
+  "name": "cordova-plugin-cambie",
+  "version": "1.0.0-dev",
+  "description": "Native Navigation UI plugin for Cordova",
+  "cordova": {
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "actionbar",
+    "navigation",
+    "drawer",
+    "toolbar",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "engines": [
+    {
+      "name": "cordova-android",
+      "version": ">=4.0.0"
+    },
+    {
+      "name": "cordova-ios",
+      "version": ">=3.7.0"
+    }
+  ]
+}

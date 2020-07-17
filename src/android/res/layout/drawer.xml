@@ -1,0 +1,14 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:id="@+id/navdrawer"
+    android:layout_gravity="start"
+    android:layout_width="260dp"
+    android:layout_height="match_parent">
+
+    <ListView
+        android:id="@+id/navdrawer_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
+</LinearLayout>

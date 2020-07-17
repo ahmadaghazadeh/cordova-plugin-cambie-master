@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-cambie"
+    version="1.0.0-dev">
+
+    <name>Cambie</name>
+    <description>Native Navigation UI plugin for Cordova</description>
+    <keywords>cordova,actionbar,drawer,navigation,toolbar</keywords>
+    <!--<repo></repo>-->
+
+    <engines>
+        <engine name="cordova-android" version=">= 4.0.0-dev" />
+        <engine name="cordova-ios" version=">= 3.7.0" />
+    </engines>
+
+    <js-module src="www/cambie.js" name="Cambie">
+        <clobbers target="cordova.plugins.cambie" />
+    </js-module>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Cambie">
+                <param name="android-package" value="ca.dpogue.cambie.CambiePlugin" />
+            </feature>
+
+            <preference name="CambieTheme" value="@style/Theme.AppCompat" />
+        </config-file>
+
+        <hook type="after_plugin_install" src="scripts/cambie_activity.js" />
+
+        <source-file src="src/android/ca/dpogue/cambie/CambieActivity.java"
+                     target-dir="src/ca/dpogue/cambie" />
+        <source-file src="src/android/ca/dpogue/cambie/CambieColor.java"
+                     target-dir="src/ca/dpogue/cambie" />
+        <source-file src="src/android/ca/dpogue/cambie/CambieDrawerAdapter.java"
+                     target-dir="src/ca/dpogue/cambie" />
+        <source-file src="src/android/ca/dpogue/cambie/CambiePlugin.java"
+                     target-dir="src/ca/dpogue/cambie" />
+
+
+        <source-file src="src/android/res/layout/drawer_item.xml"
+                     target-dir="res/layout" />
+        <source-file src="src/android/res/values/fonts.xml"
+                     target-dir="res/values" />
+        <source-file src="src/android/res/values-v21/fonts.xml"
+                     target-dir="res/values-v21" />
+
+        <framework src="com.android.support:appcompat-v7:21.0.+" />
+        <framework src="com.android.support:support-v4:23.1.+" />
+    </platform>
+
+
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="Cambie">
+                <param name="ios-package" value="CambiePlugin" />
+                <param name="onload" value="true" />
+            </feature>
+
+            <preference name="CambieTheme" value="Light" />
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="UIViewControllerBasedStatusBarAppearance">
+            <false/>
+        </config-file>
+
+        <source-file src="src/ios/CambiePlugin.m" />
+        <header-file src="src/ios/CambiePlugin.h" />
+
+        <source-file src="src/ios/CambieNavigationBar.m" />
+        <header-file src="src/ios/CambieNavigationBar.h" />
+
+        <source-file src="src/ios/UIView+CambieLayout.m" />
+        <header-file src="src/ios/UIView+CambieLayout.h" />
+
+        <source-file src="src/ios/AppDelegate+Custom.m" />
+        <header-file src="src/ios/AppDelegate+Custom.h" />
+
+        <source-file src="src/ios/CambieViewController.m" />
+        <header-file src="src/ios/CambieViewController.h" />
+
+        <source-file src="src/ios/MMDrawerViewController.m" />
+        <header-file src="src/ios/MMDrawerViewController.h" />
+
+        <source-file src="src/ios/MMDrawerVisualState.m" />
+        <header-file src="src/ios/MMDrawerVisualState.h" />
+
+        <source-file src="src/ios/MMDrawerVisualStateManager.m" />
+        <header-file src="src/ios/MMDrawerVisualStateManager.h" />
+
+        <source-file src="src/ios/UIViewController+CambieViewController.m" />
+        <header-file src="src/ios/UIViewController+CambieViewController.h" />
+
+        <framework src="QuartzCore.framework" />
+    </platform>
+</plugin>
